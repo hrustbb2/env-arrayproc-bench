@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  php:
+    build:
+      context: ../../dockerfiles/php
+      dockerfile: Dockerfile
+    volumes:
+      - ../../app:/var/www/html
+      - ../scripts/php:/home/scripts
+    command: sh /home/scripts/start.sh
+  db:
+    build:
+      context: ../../dockerfiles/mysql
+      dockerfile: Dockerfile
+    volumes:
+      - ../../data/mysql:/var/lib/mysql
+      - ../scripts/mysql:/home/scripts
+    ports:
+      - 3306:3306
+    command: sh /home/scripts/start.sh
+networks:
+  default:
+    external:
+      name: dockernet
