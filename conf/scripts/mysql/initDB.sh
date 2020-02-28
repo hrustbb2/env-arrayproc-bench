@@ -24,5 +24,5 @@ then
     cat /tmp/sql | mysql -u root --password="${DB_ROOT_PASS}"
     rm /tmp/sql
 
-#    mysql -u root --password="${DB_ROOT_PASS}" "${DB_NAME}" < /home/dumps/dump.sql
+    mysql -u root --password="${DB_ROOT_PASS}" "${DB_NAME}" < /home/scripts/dump.sql
 fi
