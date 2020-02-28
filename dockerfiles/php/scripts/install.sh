@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apk update && apk upgrade
+apk add git
 apk add supervisor
 apk add jpeg-dev
 apk add libjpeg
